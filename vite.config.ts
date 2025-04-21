@@ -10,7 +10,7 @@ export default defineConfig({
     globals: true,
     reporters: ["verbose"],
     environment: "jsdom",
-    setupFiles: ["./src/setupTest.ts"],
+    setupFiles: ["/setupTest.ts"],
     coverage: {
       provider: "v8",
       include: ["**/*.tsx", "**/*.ts"],
