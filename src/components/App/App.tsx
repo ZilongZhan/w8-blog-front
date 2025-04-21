@@ -1,7 +1,8 @@
-import "./App.css";
+import Layout from "../Layout/Layout";
+import "@fontsource/cookie/400.css";
 
 const App: React.FC = () => {
-  return <div className="container"></div>;
+  return <Layout />;
 };
 
 export default App;
