@@ -9,12 +9,12 @@
   border-radius: 6px;
   transition: all 0.3s;
 
-  &:hover {
-    background-color: #baff8c;
-  }
-
   @media (width > 600px) {
     font-size: 1.5rem;
+
+    &:hover {
+      background-color: #baff8c;
+    }
   }
 }
 
