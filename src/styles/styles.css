@@ -42,8 +42,4 @@ li {
 a {
   color: inherit;
   text-decoration: none;
-
-  &:hover {
-    text-decoration: none;
-  }
 }
