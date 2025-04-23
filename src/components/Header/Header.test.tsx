@@ -1,13 +1,16 @@
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router";
 import Header from "./Header";
 
 describe("Given the Header component", () => {
   describe("When it renders", () => {
     test("Then it should show 'Rice Cooking' as heading level 1", () => {
-      render(<Header />);
+      const expectedHeadingText = "rice cooking";
+
+      render(<Header />, { wrapper: MemoryRouter });
 
       const appTitle = screen.getByRole("heading", {
-        name: /rice cooking/i,
+        name: new RegExp(expectedHeadingText, "i"),
         level: 1,
       });
 
