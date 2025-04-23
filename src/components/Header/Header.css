@@ -1,12 +1,17 @@
 .main-header {
   min-height: 100px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 12px;
+  padding: 20px;
+}
 
-  @media (width > 600px) {
-    min-height: 150px;
-  }
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .app-title {
