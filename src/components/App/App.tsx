@@ -1,12 +1,8 @@
-import Layout from "../Layout/Layout";
 import "@fontsource/cookie/400.css";
+import Layout from "../Layout/Layout";
 
 const App: React.FC = () => {
-  return (
-    <>
-      <Layout />
-    </>
-  );
+  return <Layout></Layout>;
 };
 
 export default App;
