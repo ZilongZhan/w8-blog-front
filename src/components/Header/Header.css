@@ -1,8 +1,6 @@
 .main-header {
-  min-height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 12px;
   padding-bottom: 30px;
