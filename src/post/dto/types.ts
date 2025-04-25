@@ -7,8 +7,3 @@ export interface PostDto {
   content: string;
   publishDate: string;
 }
-
-export interface PostInfoDto {
-  posts: PostDto[];
-  postsTotal: number;
-}

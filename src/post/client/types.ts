@@ -1,10 +1,5 @@
-import { Post } from "../types";
+import { PostsInfo } from "../types";
 
 export interface PostClientStructure {
-  getPostsInfo: () => Promise<PostInfo>;
-}
-
-export interface PostInfo {
-  posts: Post[];
-  postsTotal: number;
+  getPostsInfo: () => Promise<PostsInfo>;
 }
