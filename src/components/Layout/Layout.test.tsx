@@ -5,12 +5,12 @@ import Layout from "./Layout";
 describe("Given the Layout component", () => {
   describe("When it renders", () => {
     test("Then it should show 'Rice Cooking' as heading level 1", () => {
-      const expectedAppTitle = "rice cooking";
+      const expectedAppTitle = /rice cooking/i;
 
       render(<Layout />, { wrapper: MemoryRouter });
 
       const appTitle = screen.getByRole("heading", {
-        name: new RegExp(expectedAppTitle, "i"),
+        name: expectedAppTitle,
         level: 1,
       });
 
