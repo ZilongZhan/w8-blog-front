@@ -16,6 +16,14 @@
   gap: 24px;
 }
 
+.app-logo {
+  display: none;
+
+  @media (width >= 353px) {
+    display: inline;
+  }
+}
+
 .app-title {
   font-family: Cookie, "Roboto Variable", Arial, Helvetica, sans-serif;
   font-size: 3rem;

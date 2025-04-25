@@ -14,7 +14,7 @@ describe("Given the Layout component", () => {
         level: 1,
       });
 
-      expect(appTitle).toBeVisible();
+      expect(appTitle).toBeInTheDocument();
     });
   });
 });

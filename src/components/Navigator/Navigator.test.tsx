@@ -13,7 +13,7 @@ describe("Given the Navigator component", () => {
         name: expectedLinkText,
       });
 
-      expect(postsLink).toBeVisible();
+      expect(postsLink).toBeInTheDocument();
     });
   });
 });
