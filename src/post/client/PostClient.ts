@@ -1,4 +1,4 @@
-import { mapPostsDtoToPosts } from "../dto/mapper";
+import { mapPostsDtoToPosts } from "../dto/mappers";
 import { PostDto } from "../dto/types";
 import { PostsInfo } from "../types";
 import { PostClientStructure } from "./types";
