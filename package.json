@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prod": "tsc -b && vite build && vite preview",
     "build": "tsc -b && vite build",
     "build:dev": "tsc -b --watch && vite build --watch",
     "lint": "eslint .",
-    "preview": "tsc -b && vite build && vite preview",
+    "preview": "vite preview",
     "prepare": "husky",
     "test": "vitest run",
     "test:dev": "vitest",

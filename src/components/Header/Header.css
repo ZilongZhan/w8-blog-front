@@ -14,8 +14,10 @@
 }
 
 .app-logo {
-  @media (width >= 300px) {
-    display: none;
+  display: none;
+
+  @media (width >= 353px) {
+    display: inline;
   }
 }
 
