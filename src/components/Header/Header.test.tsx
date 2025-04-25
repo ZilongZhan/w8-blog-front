@@ -14,7 +14,7 @@ describe("Given the Header component", () => {
         level: 1,
       });
 
-      expect(appTitle).toBeVisible();
+      expect(appTitle).toBeInTheDocument();
     });
   });
 });

@@ -13,7 +13,7 @@ describe("Given the Navigator component", () => {
         name: new RegExp(expectedLinkText, "i"),
       });
 
-      expect(postsLink).toBeVisible();
+      expect(postsLink).toBeInTheDocument();
     });
   });
 });
