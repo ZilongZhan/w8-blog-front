@@ -3,10 +3,10 @@ import PostsContext from "./PostsContext";
 import usePosts from "../hooks/usePosts";
 
 const PostsContextProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const postsContext = usePosts();
+  const postsContextValue = usePosts();
 
   return (
-    <PostsContext.Provider value={postsContext}>
+    <PostsContext.Provider value={postsContextValue}>
       {children}
     </PostsContext.Provider>
   );
