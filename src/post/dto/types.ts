@@ -1,9 +1,11 @@
-export interface PostDto {
+import { PostBasic } from "../types";
+
+export interface PostDto extends PostBasic {
   _id: string;
-  title: string;
-  imageUrl: string;
-  imageAlt: string;
-  tags: string[];
-  content: string;
   publishDate: string;
+}
+
+export interface PostsInfoDto {
+  posts: PostDto[];
+  postsTotal: number;
 }
