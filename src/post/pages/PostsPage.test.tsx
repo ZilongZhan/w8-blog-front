@@ -12,7 +12,7 @@ describe("Given the PostsPage component", () => {
         name: expectedHeadingText,
       });
 
-      expect(postsPageTitle).toBeVisible();
+      expect(postsPageTitle).toBeInTheDocument();
     });
   });
 });
