@@ -1,11 +1,10 @@
-import { PostBasic } from "../types";
+import { Post, PostsInfo } from "../types";
 
-export interface PostDto extends PostBasic {
+export interface PostDto extends Omit<Post, "id" | "publishDate"> {
   _id: string;
   publishDate: string;
 }
 
-export interface PostsInfoDto {
+export interface PostsInfoDto extends Omit<PostsInfo, "posts"> {
   posts: PostDto[];
-  postsTotal: number;
 }
