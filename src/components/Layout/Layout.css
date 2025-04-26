@@ -9,8 +9,3 @@
 .main-content {
   padding: 20px 40px;
 }
-
-.main-content {
-  display: flex;
-  flex-direction: column;
-}
