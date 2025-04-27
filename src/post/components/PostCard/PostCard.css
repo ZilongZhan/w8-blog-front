@@ -45,8 +45,7 @@
 .post__tags-list {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 30px;
-  column-gap: 10px;
+  gap: 10px;
 }
 
 .post__tag {
@@ -54,4 +53,5 @@
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
+  display: inline-block;
 }
