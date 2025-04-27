@@ -15,6 +15,7 @@ const usePostForm = (): UsePostForm => {
   const [postFormData, setPostFormData] =
     useState<PostFormData>(initialPostFormData);
   const [tag, setTag] = useState<string>("");
+  const [warning, setWarning] = useState<boolean>(false);
 
   const handleOnChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -37,6 +38,11 @@ const usePostForm = (): UsePostForm => {
   const addTag = (): void => {
     const trimmedTag = tag.replace(" ", "");
 
+    if (postFormData.tags.length === 3) {
+      setWarning(true);
+      return;
+    }
+
     if (trimmedTag !== "") {
       setPostFormData(({ tags, ...postFormData }) => ({
         ...postFormData,
@@ -50,7 +56,7 @@ const usePostForm = (): UsePostForm => {
   const handleKeyDown = (
     event: React.KeyboardEvent<HTMLInputElement>,
   ): void => {
-    if (event.key === "Enter" && event.target === event.currentTarget) {
+    if (event.key === "Enter") {
       addTag();
     }
   };
@@ -66,6 +72,8 @@ const usePostForm = (): UsePostForm => {
       ...postFormData,
       tags: updatedTags,
     }));
+
+    setWarning(false);
   };
 
   const isValidData =
@@ -83,6 +91,7 @@ const usePostForm = (): UsePostForm => {
     handleKeyDown,
     deleteTag,
     handleSubmit,
+    warning,
     isValidData,
   };
 };

@@ -12,6 +12,7 @@ const PostForm: React.FC = () => {
     handleNewTag,
     handleOnChange,
     handleSubmit,
+    warning,
     isValidData,
   } = usePostForm();
 
@@ -91,6 +92,13 @@ const PostForm: React.FC = () => {
         </label>
         <span>*press enter after each tag</span>
         <div className="tags-input-container">
+          <input
+            id="tags"
+            className="post-form__input post-form__input--tags"
+            value={tag}
+            onChange={handleNewTag}
+            onKeyDown={handleKeyDown}
+          />
           <ul className="tags-list">
             {tags.map((tag) => (
               <li key={uuid()} className="tag">
@@ -103,13 +111,7 @@ const PostForm: React.FC = () => {
               </li>
             ))}
           </ul>
-          <input
-            id="tags"
-            className="post-form__input post-form__input--tags"
-            value={tag}
-            onChange={handleNewTag}
-            onKeyDown={handleKeyDown}
-          />
+          {warning && <span className="warning">You already have 3 tags</span>}
         </div>
       </div>
       <Button

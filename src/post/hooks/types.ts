@@ -10,5 +10,6 @@ export interface UsePostForm {
   handleKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   deleteTag: (thisTag: string) => void;
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  warning: boolean;
   isValidData: boolean;
 }
