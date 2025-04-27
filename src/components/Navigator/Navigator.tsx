@@ -7,12 +7,12 @@ const Navigator: React.FC = () => {
       <ul className="navigator__list">
         <li>
           <NavLink className="navigator__link" to="/posts">
-            😋Posts
+            😋Recipes
           </NavLink>
         </li>
         <li>
           <NavLink className="navigator__link" to="/add-post">
-            📝Add Post
+            📝Add Recipe
           </NavLink>
         </li>
       </ul>

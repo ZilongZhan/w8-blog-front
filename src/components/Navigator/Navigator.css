@@ -10,7 +10,7 @@
 
 .navigator__link {
   font-size: 1.25rem;
-  background-color: #e8c5d2;
+  background-color: var(--pink-secundary);
   padding: 6px 10px;
   border-radius: 6px;
   transition: all 0.3s;
@@ -20,12 +20,12 @@
     font-size: 1.5rem;
 
     &:hover {
-      background-color: #baff8c;
+      background-color: var(--green-main);
     }
   }
 }
 
 .active {
   font-weight: bold;
-  background-color: #8ce8ff;
+  background-color: var(--blue-main);
 }

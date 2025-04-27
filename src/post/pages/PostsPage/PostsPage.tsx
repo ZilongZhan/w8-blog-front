@@ -1,13 +1,28 @@
+import { useEffect } from "react";
+import usePosts from "../../hooks/usePosts";
+import PostsList from "../../components/PostsList/PostsList";
 import "./PostsPage.css";
+import Paginator from "../../../components/Paginator/Paginator";
+import { useParams } from "react-router";
 
 const PostsPage: React.FC = () => {
+  const { posts, postsTotal, loadPostsInfo } = usePosts();
+  const { currentPage } = useParams();
+
+  const pageNumber = Number(currentPage ?? 1);
+
+  useEffect(() => {
+    loadPostsInfo(pageNumber);
+  }, [loadPostsInfo, pageNumber]);
+
   return (
     <>
       <h2 className="page-title">All our recipies</h2>
-      <div className="page-info">
-        <span>Page 1</span>
-        <span>5 out of 66 recipies</span>
-      </div>
+      <span className="posts-info">
+        {posts.length} out of {postsTotal} recipies
+      </span>
+      <PostsList posts={posts} />
+      <Paginator pageNumber={pageNumber} postsTotal={postsTotal} />
     </>
   );
 };

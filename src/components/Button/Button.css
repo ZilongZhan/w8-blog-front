@@ -33,4 +33,9 @@
 .button--paginator {
   padding: 5px 10px;
   color: inherit;
+  background: none;
+
+  &:hover {
+    background: none;
+  }
 }

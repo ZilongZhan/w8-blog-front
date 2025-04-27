@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { macAndCheese } from "../../fixtures";
 import PostCard from "./PostCard";
+import { macAndCheese } from "../../fixtures";
 
 describe("Given the PostCard component", () => {
   describe("When it receives a mac and cheese post", () => {
