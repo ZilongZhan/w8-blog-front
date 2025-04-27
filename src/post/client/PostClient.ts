@@ -29,6 +29,10 @@ class PostClient implements PostClientStructure {
       body: JSON.stringify(postFormData),
     });
 
+    if (!response.ok) {
+      throw new Error("Error adding post");
+    }
+
     const newPost = (await response.json()) as PostDto;
 
     return mapPostDtoToPost(newPost);
