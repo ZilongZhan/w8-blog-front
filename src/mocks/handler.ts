@@ -1,5 +1,8 @@
 import { http, HttpResponse } from "msw";
-import { microwaveRecipiesPostsDto } from "../post/dto/fixturesDto";
+import {
+  costillitasLekuePostDto,
+  microwaveRecipiesPostsDto,
+} from "../post/dto/fixturesDto";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -13,5 +16,9 @@ export const handlers = [
       posts: microwaveRecipiesPostsDto,
       postsTotal: microwaveRecipiesPostsDto.length,
     });
+  }),
+
+  http.post(`${apiUrl}/posts`, () => {
+    return HttpResponse.json(costillitasLekuePostDto);
   }),
 ];
