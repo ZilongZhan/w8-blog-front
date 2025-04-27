@@ -13,3 +13,5 @@ export interface Post {
   tags: string[];
   content: string;
 }
+
+export type PostFormData = Omit<Post, "id" | "publishDate">;
