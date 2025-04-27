@@ -1,0 +1,27 @@
+.button {
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #8ce8ff;
+
+  &:hover {
+    background-color: #baff8c;
+  }
+}
+
+.button--submit {
+  padding: 10px 20px;
+}
+
+.button--tag {
+  background: none;
+  font-weight: normal;
+
+  &:hover {
+    background: none;
+  }
+}
+
+.button--paginator {
+  padding: 5px 10px;
+  color: inherit;
+}
