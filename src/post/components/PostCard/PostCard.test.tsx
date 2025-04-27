@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { macAndCheese } from "../fixtures";
+import { macAndCheese } from "../../fixtures";
 import PostCard from "./PostCard";
 
 describe("Given the PostCard component", () => {

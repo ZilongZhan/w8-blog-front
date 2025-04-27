@@ -4,11 +4,6 @@
   gap: 12px;
 }
 
-.posts-title {
-  font-family: var(--custom-font);
-  font-size: 2.5rem;
-}
-
 .page-info {
   display: flex;
   gap: 6px;
