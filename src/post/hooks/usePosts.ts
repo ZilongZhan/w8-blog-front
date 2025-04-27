@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { PostsContextStructure } from "../context/types";
 import { PostsInfo } from "../types";
+import PostClient from "../client/PostClient";
 
 const usePosts = (): PostsContextStructure => {
-  const [postsInfo] = useState<PostsInfo>({
+  const [postsInfo, setPosts] = useState<PostsInfo>({
     posts: [],
     postsTotal: 0,
   });
 
-  return { ...postsInfo };
+  const postClient = useMemo(() => new PostClient(), []);
+
+  const loadPostsInfo = useCallback(async (): Promise<void> => {
+    const apiPostsInfo = await postClient.getPostsInfo();
+
+    setPosts(apiPostsInfo);
+  }, [postClient]);
+
+  return { ...postsInfo, loadPostsInfo };
 };
 
 export default usePosts;

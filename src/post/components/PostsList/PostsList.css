@@ -1,0 +1,13 @@
+.posts-container {
+  padding-top: 12px;
+
+  @media (width > 600px) {
+    padding-top: 24px;
+  }
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
