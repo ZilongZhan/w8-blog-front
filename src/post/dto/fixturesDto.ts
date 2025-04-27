@@ -41,3 +41,16 @@ export const microwaveRecipiesPostsDto = [
   microwaveScrambledEggsPostDto,
   microwaveMacAndCheesePostDto,
 ];
+
+export const costillitasLekuePostDto: PostDto = {
+  _id: "123abc",
+  publishDate: "2025-04-27T12:00:00Z",
+  title: "Pork ribs with green pepper and spring garlic",
+  author: "Newtown Guy",
+  content:
+    "Well, look, you take some pork ribs from Condis, a green pepper, and spring garlic. Put it in the green thing and microwave on full power for 8 minutes. And that's fucking it. Don't forget to season to taste.",
+  imageUrl: "http://www.lekue.cat/costillitas.png",
+  imageAlt:
+    "Close-up of pork ribs with green pepper and spring garlic in the Lekué pot",
+  tags: ["lekue", "microwave"],
+};

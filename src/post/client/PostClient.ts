@@ -1,12 +1,12 @@
-import { mapPostsDtoToPosts } from "../dto/mappers";
-import { PostsInfoDto } from "../dto/types";
-import { PostsInfo } from "../types";
+import { mapPostDtoToPost, mapPostsDtoToPosts } from "../dto/mappers";
+import { PostDto, PostsInfoDto } from "../dto/types";
+import { Post, PostFormData, PostsInfo } from "../types";
 import { PostClientStructure } from "./types";
 
 class PostClient implements PostClientStructure {
   private apiUrl = import.meta.env.VITE_API_URL;
 
-  getPostsInfo = async (pageNumber = 1): Promise<PostsInfo> => {
+  public getPostsInfo = async (pageNumber = 1): Promise<PostsInfo> => {
     const response = await fetch(
       `${this.apiUrl}/posts?pageNumber=${pageNumber}`,
     );
@@ -20,6 +20,18 @@ class PostClient implements PostClientStructure {
       posts,
       postsTotal,
     };
+  };
+
+  public addPost = async (postFormData: PostFormData): Promise<Post> => {
+    const response = await fetch(`${this.apiUrl}/posts`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(postFormData),
+    });
+
+    const newPost = (await response.json()) as PostDto;
+
+    return mapPostDtoToPost(newPost);
   };
 }
 

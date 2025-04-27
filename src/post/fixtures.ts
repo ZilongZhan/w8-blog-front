@@ -1,4 +1,4 @@
-import { Post } from "./types";
+import { Post, PostFormData } from "./types";
 
 const chickenAndRice: Post = {
   id: "post1",
@@ -122,3 +122,14 @@ Instructions:
 };
 
 export { chickenAndRice, fluffyPancakes, macAndCheese, quinoa, vegetableCurry };
+
+export const costillitasLekuePostFormData: PostFormData = {
+  author: "Newtown Guy",
+  content:
+    "Well, look, you take some pork ribs from Condis, a green pepper, and spring garlic. Put it in the green thing and microwave on full power for 8 minutes. And that's fucking it. Don't forget to season to taste.",
+  imageUrl: "http://www.lekue.cat/costillitas.png",
+  imageAlt:
+    "Close-up of pork ribs with green pepper and spring garlic in the Lekué pot",
+  tags: ["lekue", "microwave"],
+  title: "Pork ribs with green pepper and spring garlic",
+};
