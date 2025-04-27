@@ -11,4 +11,5 @@ export interface Post {
   imageAlt: string;
   tags: string[];
   content: string;
+  author: string;
 }
