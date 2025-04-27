@@ -18,6 +18,8 @@ const Paginator: React.FC<PaginatorProps> = ({ pageNumber, postsTotal }) => {
 
   const goToPage = (pageNumber: number): void => {
     navigate(`/posts/${pageNumber}`);
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

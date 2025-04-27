@@ -11,11 +11,14 @@ const usePosts = (): PostsContextStructure => {
 
   const postClient = useMemo(() => new PostClient(), []);
 
-  const loadPostsInfo = useCallback(async (): Promise<void> => {
-    const apiPostsInfo = await postClient.getPostsInfo();
+  const loadPostsInfo = useCallback(
+    async (pageNumber?: number): Promise<void> => {
+      const apiPostsInfo = await postClient.getPostsInfo(pageNumber);
 
-    setPosts(apiPostsInfo);
-  }, [postClient]);
+      setPosts(apiPostsInfo);
+    },
+    [postClient],
+  );
 
   return { ...postsInfo, loadPostsInfo };
 };

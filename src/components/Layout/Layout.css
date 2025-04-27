@@ -7,15 +7,29 @@
 
 .main-header,
 .main-content {
-  padding: 20px 20px;
+  padding: 20px 10px;
 
-  @media (width > 600px) {
-    padding: 20px 40px;
+  @media (width >= 400px) {
+    padding: 20px 20px;
+  }
+
+  @media (width >= 650px) {
+    padding: 20px 50px;
+  }
+
+  @media (width >= 1200px) {
+    padding: 20px 200px;
   }
 }
 
 .main-content {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+
+.page-title {
+  font-family: var(--custom-font);
+  font-size: 2.5rem;
   gap: 12px;
 }

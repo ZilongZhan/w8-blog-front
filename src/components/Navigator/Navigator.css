@@ -2,6 +2,12 @@
   align-self: stretch;
 }
 
+.navigator__list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 .navigator__link {
   font-size: 1.25rem;
   background-color: var(--pink-secundary);

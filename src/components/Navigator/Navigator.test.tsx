@@ -5,7 +5,7 @@ import Navigator from "./Navigator";
 describe("Given the Navigator component", () => {
   describe("When it renders", () => {
     test("Then it should show a 'Posts' link", () => {
-      const expectedLinkText = /posts/i;
+      const expectedLinkText = /recipes/i;
 
       render(<Navigator />, { wrapper: MemoryRouter });
 
