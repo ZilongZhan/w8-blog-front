@@ -9,7 +9,7 @@ export const fiveMinuteMicrowaveMugCakePostDto: PostDto = {
   content:
     "Mix flour, sugar, cocoa powder, and milk in a mug. Microwave for 1-2 minutes. Enjoy your instant cake!",
   publishDate: "2025-04-25T10:00:00Z",
-  author: "Tom & Jerry,",
+  author: "John Doe",
 };
 
 export const microwaveScrambledEggsPostDto: PostDto = {
@@ -21,7 +21,7 @@ export const microwaveScrambledEggsPostDto: PostDto = {
   content:
     "Whisk eggs with a splash of milk, season with salt and pepper, and microwave in 30-second bursts, stirring in between.",
   publishDate: "2025-04-24T08:30:00Z",
-  author: "Bonnie & Clyde",
+  author: "John Doe",
 };
 
 export const microwaveMacAndCheesePostDto: PostDto = {
@@ -33,7 +33,7 @@ export const microwaveMacAndCheesePostDto: PostDto = {
   content:
     "Combine macaroni, water, and salt in a mug. Microwave until pasta is cooked. Stir in cheese and a splash of milk, microwave again until creamy.",
   publishDate: "2025-04-23T12:00:00Z",
-  author: "Sonny & Cher",
+  author: "John Doe",
 };
 
 export const microwaveRecipiesPostsDto = [

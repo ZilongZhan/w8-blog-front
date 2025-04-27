@@ -1,8 +1,22 @@
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .posts-title {
-  font-family: Cookie, "Roboto Variable", Arial, Helvetica, sans-serif;
+  font-family: var(--custom-font);
   font-size: 2.5rem;
 }
 
-.posts-info {
+.page-info {
+  display: flex;
+  gap: 6px;
+  flex-direction: row;
+  justify-content: space-between;
   font-size: 1.25rem;
+
+  @media (width > 600px) {
+    flex-direction: column;
+  }
 }

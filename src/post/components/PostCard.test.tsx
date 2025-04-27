@@ -1,0 +1,52 @@
+import { render, screen } from "@testing-library/react";
+import { macAndCheese } from "../fixtures";
+import PostCard from "./PostCard";
+
+describe("Given the PostCard component", () => {
+  describe("When it receives a mac and cheese post", () => {
+    test("Then it should show 'Mac and Cheese' inside a heading", () => {
+      const expectedTitle = /mac and cheese/i;
+
+      render(<PostCard post={macAndCheese} />);
+
+      const postTitle = screen.getByRole("heading", {
+        name: expectedTitle,
+      });
+
+      expect(postTitle).toBeInTheDocument();
+    });
+
+    test("Then it should show creamy mac and cheese in a bowl", () => {
+      const expectedImage = /creamy mac and cheese in a bowl/i;
+
+      render(<PostCard post={macAndCheese} />);
+
+      const postImage = screen.getByAltText(expectedImage);
+
+      expect(postImage).toBeInTheDocument();
+    });
+
+    test("Then it should show the first 100 words of the mac and cheese recipe", () => {
+      const wordsLimit = 100;
+      const expectedText = macAndCheese.content
+        .split(" ")
+        .slice(0, wordsLimit)
+        .join(" ");
+
+      render(<PostCard post={macAndCheese} />);
+
+      const postContent = screen.getByRole("paragraph");
+      const contentText = postContent.textContent;
+
+      expect(contentText).toBe(expectedText);
+    });
+
+    test("Then it should have been posted on April 16, 2025", () => {
+      render(<PostCard post={macAndCheese} />);
+
+      const postPublishDate = screen.getByText(/april 3, 2025/i);
+
+      expect(postPublishDate).toBeInTheDocument();
+    });
+  });
+});
