@@ -1,4 +1,5 @@
 import { Post } from "../../types";
+import PostCard from "../PostCard/PostCard";
 import "./PostsList.css";
 
 interface PostsListProps {
@@ -11,9 +12,7 @@ const PostsList: React.FC<PostsListProps> = ({ posts }) => {
       <ul className="posts">
         {posts.map((post) => (
           <li key={post.id}>
-            <article className="post">
-              <h3 className="post__title">{post.title}</h3>
-            </article>
+            <PostCard post={post} />
           </li>
         ))}
       </ul>

@@ -1,5 +1,5 @@
 .post {
-  background-color: #baff8c;
+  background-color: var(--green-main);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -15,15 +15,12 @@
   object-fit: cover;
   aspect-ratio: 3/2;
   border-radius: 10px;
+  min-height: 300px;
 
   @media (width >= 650px) {
-    width: 50%;
-    max-width: 450px;
+    min-height: 250px;
+    max-width: 500px;
   }
-}
-
-.post__info {
-  overflow: hidden;
 }
 
 .post__title {
@@ -47,11 +44,13 @@
 
 .post__tags-list {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 10px;
 }
 
 .post__tag {
-  background-color: #8ce8ff;
+  background-color: var(--blue-main);
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;

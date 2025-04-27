@@ -1,4 +1,4 @@
-import { Post } from "../types";
+import { Post } from "../../types";
 import "./PostCard.css";
 
 interface PostCardProps {
@@ -20,7 +20,7 @@ const PostCard: React.FC<PostCardProps> = ({
   return (
     <article className="post">
       <img className="post__image" src={imageUrl} alt={imageAlt} />
-      <div className="post__info">
+      <div>
         <h3 className="post__title">{title}</h3>
         <span>
           {formattedDate} by {author}
@@ -28,7 +28,9 @@ const PostCard: React.FC<PostCardProps> = ({
         <p className="post__content post__content--preview">{contentPreview}</p>
         <ul className="post__tags-list">
           {tags.map((tag) => (
-            <span className="post__tag">#{tag}</span>
+            <li key={tag}>
+              <span className="post__tag">#{tag}</span>
+            </li>
           ))}
         </ul>
       </div>
