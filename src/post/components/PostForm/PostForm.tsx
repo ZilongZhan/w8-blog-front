@@ -17,7 +17,7 @@ const PostForm: React.FC = () => {
 
   return (
     <form className="post-form" onSubmit={handleSubmit}>
-      <h3>Recipe info</h3>
+      <h3 className="post-form__title">Recipe info</h3>
       <div className="post-form__group">
         <label className="post-form__label" htmlFor="title">
           Title:

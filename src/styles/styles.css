@@ -47,3 +47,15 @@ button {
   cursor: pointer;
   font: inherit;
 }
+
+input,
+label,
+textarea {
+  font: inherit;
+}
+
+input,
+textarea {
+  border: none;
+  padding: 0;
+}
