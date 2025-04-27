@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import "./Paginator.css";
+import Button from "../Button/Button";
 
 interface PaginatorProps {
   pageNumber: number;
@@ -22,13 +23,12 @@ const Paginator: React.FC<PaginatorProps> = ({ pageNumber, postsTotal }) => {
   return (
     <div className="paginator">
       {!isFirstPage && (
-        <button
-          className="button--paginator"
-          onClick={() => goToPage(previousPage)}
+        <Button
+          modifier="paginator"
+          action={() => goToPage(previousPage)}
+          children="<"
           aria-label="Previous page"
-        >
-          {"<"}
-        </button>
+        />
       )}
       <ul className="page-indicators-list">
         {!isFirstPage && <span className="page-indicator">{previousPage}</span>}
@@ -38,13 +38,12 @@ const Paginator: React.FC<PaginatorProps> = ({ pageNumber, postsTotal }) => {
         {!isLastPage && <span className="page-indicator">{nextPage}</span>}
       </ul>
       {!isLastPage && (
-        <button
-          className="button--paginator"
-          onClick={() => goToPage(nextPage)}
+        <Button
+          modifier="paginator"
+          action={() => goToPage(nextPage)}
+          children=">"
           aria-label="Next page"
-        >
-          {">"}
-        </button>
+        />
       )}
     </div>
   );
