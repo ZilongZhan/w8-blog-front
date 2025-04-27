@@ -1,0 +1,22 @@
+.paginator {
+  display: flex;
+  align-self: center;
+  border-radius: 5px;
+  border: 0.5px solid;
+  color: var(--main-black);
+}
+
+.button--paginator {
+  padding: 5px 10px;
+  color: inherit;
+}
+
+.page-indicator {
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+.page-indicator--current {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
