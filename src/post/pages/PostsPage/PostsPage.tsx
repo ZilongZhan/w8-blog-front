@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import usePosts from "../hooks/usePosts";
+import usePosts from "../../hooks/usePosts";
+import PostsList from "../../component/PostsList/PostsList";
 import "./PostsPage.css";
-import PostsList from "../component/PostsList/PostsList";
 
 const PostsPage: React.FC = () => {
   const { posts, postsTotal, loadPostsInfo } = usePosts();
