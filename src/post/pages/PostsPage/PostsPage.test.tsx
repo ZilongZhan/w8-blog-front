@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import PostsPage from "./PostsPage";
 import { MemoryRouter } from "react-router";
+import PostsPage from "./PostsPage";
 
 describe("Given the PostsPage component", () => {
   describe("When it renders", () => {

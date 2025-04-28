@@ -1,9 +1,9 @@
 import { useEffect } from "react";
+import { useParams } from "react-router";
 import usePosts from "../../hooks/usePosts";
 import PostsList from "../../components/PostsList/PostsList";
-import "./PostsPage.css";
 import Paginator from "../../../components/Paginator/Paginator";
-import { useParams } from "react-router";
+import "./PostsPage.css";
 
 const PostsPage: React.FC = () => {
   const { posts, postsTotal, loadPostsInfo } = usePosts();
