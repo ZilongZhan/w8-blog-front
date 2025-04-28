@@ -4,10 +4,12 @@ import "./PostCard.css";
 
 interface PostCardProps {
   post: Post;
+  index: number;
 }
 
 const PostCard: React.FC<PostCardProps> = ({
   post: { title, publishDate, author, imageUrl, imageAlt, content, tags },
+  index,
 }) => {
   const formattedDate = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
@@ -20,6 +22,8 @@ const PostCard: React.FC<PostCardProps> = ({
 
   const handleDelete = (): void => {};
 
+  const loadingMode = index <= 3 ? "eager" : "lazy";
+
   return (
     <article className="post">
       <Button
@@ -28,8 +32,15 @@ const PostCard: React.FC<PostCardProps> = ({
         children="✖"
         aria-label="Delete recipe"
       />
-      <img className="post__image" src={imageUrl} alt={imageAlt} />
-      <div>
+      <img
+        className="post__image"
+        src={imageUrl}
+        alt={imageAlt}
+        loading={loadingMode}
+        width={400}
+        height={400}
+      />
+      <div className="post-info">
         <h3 className="post__title">{title}</h3>
         <span>
           {formattedDate} by {author}
