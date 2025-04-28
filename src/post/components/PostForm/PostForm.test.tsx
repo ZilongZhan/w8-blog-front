@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import PostForm from "./PostForm";
 import userEvent from "@testing-library/user-event";
+import PostForm from "./PostForm";
 import AllContextsProvider from "../../../test-utils/AllContextsProvider";
 
 describe("Given the PostForm component", () => {
