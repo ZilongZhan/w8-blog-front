@@ -33,9 +33,23 @@ class PostClient implements PostClientStructure {
       throw new Error("Error adding post");
     }
 
-    const newPost = (await response.json()) as PostDto;
+    const newPostDto = (await response.json()) as PostDto;
 
-    return mapPostDtoToPost(newPost);
+    return mapPostDtoToPost(newPostDto);
+  };
+
+  public deletePost = async (postId: string): Promise<Post> => {
+    const response = await fetch(`${this.apiUrl}/posts/${postId}`, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error("Error deleting post");
+    }
+
+    const postDto = (await response.json()) as PostDto;
+
+    return mapPostDtoToPost(postDto);
   };
 }
 

@@ -23,13 +23,22 @@ const usePosts = (): PostsContextStructure => {
   const addPost = async (postFormData: PostFormData): Promise<void> => {
     const newPost = await postClient.addPost(postFormData);
 
-    setPostsInfo(({ posts, postsTotal }) => ({
-      posts: [...posts, newPost],
-      postsTotal,
+    setPostsInfo((postsInfo) => ({
+      posts: [...postsInfo.posts, newPost],
+      postsTotal: postsInfo.postsTotal,
     }));
   };
 
-  return { ...postsInfo, loadPostsInfo, addPost };
+  const deletePost = async (postId: string): Promise<void> => {
+    const apiPost = await postClient.deletePost(postId);
+
+    setPostsInfo((postsInfo) => ({
+      posts: postsInfo.posts.filter((post) => post.id !== apiPost.id),
+      postsTotal: postsInfo.postsTotal - 1,
+    }));
+  };
+
+  return { ...postsInfo, loadPostsInfo, addPost, deletePost };
 };
 
 export default usePosts;
