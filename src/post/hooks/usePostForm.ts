@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { UsePostForm } from "./types";
 import { PostFormData } from "../types";
 import usePostsProvider from "./usePostsProvider";
-import { useNavigate } from "react-router";
 
 const usePostForm = (): UsePostForm => {
   const navigate = useNavigate();

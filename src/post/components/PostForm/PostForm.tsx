@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
-import "./PostForm.css";
 import Button from "../../../components/Button/Button";
 import usePostForm from "../../hooks/usePostForm";
+import "./PostForm.css";
 
 const PostForm: React.FC = () => {
   const {
@@ -107,6 +107,7 @@ const PostForm: React.FC = () => {
                   modifier="tag"
                   action={() => deleteTag(tag)}
                   children="✖"
+                  aria-label="Delete tag"
                 />
               </li>
             ))}
