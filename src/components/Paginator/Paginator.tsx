@@ -33,11 +33,21 @@ const Paginator: React.FC<PaginatorProps> = ({ pageNumber, postsTotal }) => {
         />
       )}
       <ul className="page-indicators-list">
-        {!isFirstPage && <span className="page-indicator">{previousPage}</span>}
-        <span className="page-indicator page-indicator--current">
-          {pageNumber}
-        </span>
-        {!isLastPage && <span className="page-indicator">{nextPage}</span>}
+        {!isFirstPage && (
+          <li>
+            <span className="page-indicator">{previousPage}</span>
+          </li>
+        )}
+        <li>
+          <span className="page-indicator page-indicator--current">
+            {pageNumber}
+          </span>
+        </li>
+        {!isLastPage && (
+          <li>
+            <span className="page-indicator">{nextPage}</span>
+          </li>
+        )}
       </ul>
       {!isLastPage && (
         <Button
